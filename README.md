@@ -2,4 +2,4 @@
 
 
 
-這是可在動手實驗的 SageMaker Canvas 教程合集。
+這是 SageMaker Canvas的動手實驗。
