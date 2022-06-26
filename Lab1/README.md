@@ -16,7 +16,7 @@
 
 在本實驗室中，您將扮演為銀行工作的分析師角色。您的行銷部門要求您協助確定，即將到來營銷活動目標客戶，該活動致力於獲得新的定期存款（CDs）。他們為您提供了一個包含客戶人口統計和銀行接觸歷史的數據集。由於行銷活動的資源和預算有限，因此他們要求您使用數據來預測，哪些客戶最有可能購買新的定期存款。數據格式如下:
 
-| Column Name    | Data type       |
+| 欄位名稱    | 資料型別       |
 | -------------- | --------------- |
 | age            | INT             |
 | job            | STRING          |
@@ -69,7 +69,7 @@
 
 ## 將數據導入Canvas
 
-返回到Sagemaker Canvas。在左側菜單上，您可以單擊第二個圖標，進入數據集部分，然後單擊 **Import**按鈕。
+返回到Sagemaker Canvas。在左側選單上，您可以單擊第二個圖標，進入數據集部分，然後單擊 **Import**按鈕。
 
 ![](./Images/import-data.png)
 
@@ -77,11 +77,11 @@
 
 ![](./Images/import-from-s3-studio.png)
 
-現在，您可以通過在其左側選擇複選框來選擇先前上傳的`bank-marketing.csv`文件。頁面底部將彈出兩個新的按鈕： **Preview all** 和 **Import Data**。讓我們選擇第一個。
+現在，您可以通過在其左側複選框來選擇先前上傳的`bank-marketing.csv`文件。頁面底部將彈出兩個新的按鈕： **Preview all** 和 **Import Data**。讓我們選擇第一個。
 
 ![](./Images/canvas-select-preview.png)
 
-現在，您可以看到要導入的數據集的100筆預覽。完成資料檢查，確定是正確後，您可以單擊 **Import Data**.
+現在，您可以預覽要導入的數據集的100筆資料。完成資料檢查，確定是正確後，您可以單擊 **Import Data**.
 
 
 
@@ -99,7 +99,7 @@
 
 ![](./Images/canvas-first-model-popup.png)
 
-在模型視圖中，您將看到四個選項卡，它們對應於創建模型並使用它來生成預測的四個步驟： **Select**, **Build**, **Analyze**, **Predict**. 在第一個選項卡中，**Select**，單擊“單擊”按鈕以選擇我們之前已上傳的`bank-marketing.csv`數據集。 該數據集包括21欄位和41k筆數據。單擊底部的按鈕 **Select dataset**.
+在模型視圖中，您將看到四個選項卡，它們對應於創建模型並使用它來生成預測的四個步驟： **Select**, **Build**, **Analyze**, **Predict**. 在第一個選項卡中，**Select**，單擊按鈕選擇我們之前已經上傳的`bank-marketing.csv`數據集。 該數據集包括21欄位和41k筆數據。單擊底部的按鈕 **Select dataset**.
 
 ![](./Images/banking-build.png)
 
@@ -166,7 +166,7 @@ Canvas 將自動移動到 **Build**階段。在此選項卡中，選擇目標欄
 
 > 不用擔心以下截屏中的數字是否與您的數字不同。機器學習在模型訓練過程中，會引入了一些隨機性，這將導致產生不同的結果。
 
-當我們移動到分析當中的 **Scoring**，我們可以看到一個預測值分佈的圖表。請注意，大多數客戶不太可能購買新的定期存款。如果您想了解更多關於 Canvas使用 SHAP基線，為機器學習帶來的可解釋性，您可以查閱 Canvas 官方文件["Evaluating Your Model's Performance in Amazon SageMaker Canvas" section ](https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-evaluate-model.html)，以及 [SHAP Baselines for Explainability ](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-feature-attribute-shap-baselines.html).
+當我們移動到分析當中的 **Scoring**，我們可以看到一個預測值分佈的圖表。請注意，大多數客戶不太可能購買新的定期存款。如果您想了解更多關於 Canvas使用 SHAP基線，為機器學習帶來的可解釋性，您可以查閱 Canvas 官方文件["Evaluating Your Model's Performance in Amazon SageMaker Canvas"](https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-evaluate-model.html)，以及 [SHAP Baselines for Explainability](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-feature-attribute-shap-baselines.html).
 
 ![](./Images/banking-quick-scoring.png)
 
@@ -204,7 +204,7 @@ Canvas 將自動移動到 **Build**階段。在此選項卡中，選擇目標欄
 
 ![](./Images/banking-batch-predict-3.png)
 
-您還可以選擇 **Single prediction**一次預測一個值，而不是批次預測。Canvas將向您提供一個介面，可以針對每個欄位的值，進行設定，然後生成預測的結果。 這個適合 **模擬場景** 的應用: 例如，如果客戶是女生，購買定存的機會，會不會更高？ 如果客戶是單身，購買定存的機會，又會怎樣？
+您還可以選擇 **Single prediction**一次預測一個值，而不是批次預測。Canvas將向您提供一個介面，可以針對每個欄位的值，進行設定，然後生成預測的結果。 這個適合**模擬場景**的應用: 例如，如果客戶是女生，購買定存的機會，會不會更高？ 如果客戶是單身，購買定存的機會，又會怎樣？
 
 ![](./Images/banking-single-predict.png)
 

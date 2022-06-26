@@ -57,7 +57,7 @@ In this lab, 你想學習如何使用 Amazon SageMaker Canvas，匯入與分析�
 
 ## 將數據導入Canvas
 
-返回到Sagemaker Canvas。在左側菜單上，您可以單擊第二個圖標，進入數據集部分，然後單擊 **Import**按鈕。
+返回到Sagemaker Canvas。在左側選單上，您可以單擊第二個圖標，進入數據集部分，然後單擊 **Import**按鈕。
 
 ![](./Images/import-data.png)
 
@@ -65,11 +65,11 @@ In this lab, 你想學習如何使用 Amazon SageMaker Canvas，匯入與分析�
 
 ![](./Images/import-from-s3-studio.png)
 
-現在，您可以通過在其左側選擇複選框來選擇先前上傳的`housing.csv`文件。頁面底部將彈出兩個新的按鈕： **Preview all** 和 **Import Data**。讓我們選擇第一個。
+現在，您可以通過在其左側複選框來選擇先前上傳的`housing.csv`文件。頁面底部將彈出兩個新的按鈕： **Preview all** 和 **Import Data**。讓我們選擇第一個。
 
 ![](./Images/canvas-select-preview.png)
 
-現在，您可以看到要導入的數據集的100筆預覽。完成資料檢查，確定是正確後，您可以單擊 **Import Data**.
+現在，您可以預覽要導入的數據集的100筆資料。完成資料檢查，確定是正確後，您可以單擊 **Import Data**.
 
 ![](./Images/canvas-preview.png)
 
@@ -89,11 +89,9 @@ In this lab, 你想學習如何使用 Amazon SageMaker Canvas，匯入與分析�
 
 ![](./Images/canvas-first-model-popup.png)
 
-在模型視圖中，您將看到四個選項卡，它們對應於創建模型並使用它來生成預測的四個步驟： **Select**, **Build**, **Analyze**, **Predict**. 在第一個選項卡中，**Select**，單擊“單擊”按鈕以選擇我們之前已上傳的`housing.csv`數據集。 該數據集包括10欄位和20k筆數據。單擊底部的按鈕 **Select dataset**.
+在模型視圖中，您將看到四個選項卡，它們對應於創建模型並使用它來生成預測的四個步驟： **Select**, **Build**, **Analyze**, **Predict**. 在第一個選項卡中，**Select**，單擊按鈕選擇我們之前已經上傳的`housing.csv`數據集。 該數據集包括10欄位和20k筆數據。單擊底部的按鈕 **Select dataset**.
 
 ![](./Images/dataset-select.png)
-
-Canvas will automatically move to the **Build** phase. In this tab, choose the target column, in our case `median_house_value`. Canvas will automatically detect that this is a **numeric prediction** problem (also known as regression). If the wrong model type is detected, you can change it manually with the **Change type** link at the center of the screen.
 
 Canvas 將自動移動到 **Build**階段。在此選項卡中，選擇目標欄位，在我們的情況下是 `median_house_value`. Canvas 將自動發現，這是 **numeric prediction** 問題（也稱為回歸)。 如果系統挑選的模型類型不正確，您也可以使用屏幕中心的鏈接 **Change type** 加以改變。
 
@@ -113,15 +111,15 @@ Canvas 將自動移動到 **Build**階段。在此選項卡中，選擇目標欄
 
 > 不用擔心以下截屏中的數字是否與您的數字不同。機器學習在模型訓練過程中，會引入了一些隨機性，這將導致產生不同的結果。
 
-我們的模型顯示了我們回歸問題的指標，稱為均方根誤差（RMSE）。這代表預測的分佈情況，數值越低，代表我們對我們的目標的預測更加準確。這裡意味著我們的預測具有 +-48K的均方根誤差。我們之後會再檢視，我們的預測跟實際比較，差距有多大。
+我們的模型顯示了我們回歸問題的指標，稱為均方根誤差（RMSE）。這代表預測的分佈情況，數值越低，代表我們對我們的目標的預測越準確。這裡意味著我們的預測具有 +-48K的均方根誤差。我們之後會再檢視，我們預測跟實際比較，差距有多大。
 
 讓我們專注於第一個選項卡，**Overview**。這是向我們展示欄位影響 **Column impact**，或這些特徵，在預測目標的重要性。 在我們的案例，即使是影響最低的欄位，仍然具有影響力，這意味著我們應該保留所有欄位。我們稍後還是可以嘗試拿掉其中一些欄位，觀察這將如何影響模型的表現。
 
-如果您想了解更多關於 Canvas使用 SHAP基線，為機器學習帶來的可解釋性，您可以查閱 Canvas 官方文件["Evaluating Your Model's Performance in Amazon SageMaker Canvas" section ](https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-evaluate-model.html)，以及 [SHAP Baselines for Explainability ](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-feature-attribute-shap-baselines.html).
+如果您想了解更多關於 Canvas使用 SHAP基線，為機器學習帶來的可解釋性，您可以查閱 Canvas 官方文件["Evaluating Your Model's Performance in Amazon SageMaker Canvas"](https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-evaluate-model.html)，以及 [SHAP Baselines for Explainability](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-feature-attribute-shap-baselines.html).
 
 ![](./Images/housing-quick-scoring.png)
 
-當我們移動到分析當中的 **Scoring**，我們可以看到一個預測值分佈的圖表：這將使我們能夠計算另一個指標，平均誤差（MAE），這顯示我們的預測與實際值的平均差異。您可以通過單擊右側的 **Advanced metrics**按鈕，進一步檢視指標並獲得更多信息。
+當我們移動到分析當中的 **Scoring**，我們可以看到一個預測值分佈的圖表：這將使我們能夠計算另一個指標，平均誤差(MAE)，這顯示我們的預測與實際值的平均差異。您可以通過單擊右側的 **Advanced metrics**按鈕，進一步檢視指標並獲得更多信息。
 
 
 現在，您有兩個選擇：
@@ -146,7 +144,7 @@ Canvas 將自動移動到 **Build**階段。在此選項卡中，選擇目標欄
 
 ![](./Images/housing-batch-predictions-2.png)
 
-您還可以選擇 **Single prediction**一次預測一個值，而不是批次預測。Canvas將向您提供一個介面，可以針對每個欄位的值，進行設定，然後生成預測的結果。 這個適合 **模擬場景** 的應用: 例如，如果房屋年齡較大，價格會如何變化？ 如果房屋靠近海洋，價格會怎樣？如果房屋有更多房間，價格又會怎樣？
+您還可以選擇 **Single prediction**一次預測一個值，而不是批次預測。Canvas將向您提供一個介面，可以針對每個欄位的值，進行設定，然後生成預測的結果。 這個適合**模擬場景**的應用: 例如，如果房屋年齡較大，價格會如何變化？ 如果房屋靠近海洋，價格會怎樣？如果房屋有更多房間，價格又會怎樣？
 
 ![](./Images/housing-single-inference.png)
 
