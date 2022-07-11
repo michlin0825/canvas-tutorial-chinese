@@ -1,4 +1,4 @@
-# 實驗2  - 住房價格（房地產）
+# 實驗 2 - 住房價格（房地產）
 
 
 
@@ -39,17 +39,17 @@ In this lab, 你想學習如何使用 Amazon SageMaker Canvas，匯入與分析�
 
 ![](./Images/search_s3.png)
 
-在S3控制台中，單擊 **sagemaker-studio-\***存儲桶。
+在S3控制台中，點擊 **sagemaker-studio-\***存儲桶。
 
 ![](./Images/studio-bucket.png)
 
 > **sagemaker-studio-\*** 在當初建立 SageMaker Studio domain 的時候， 就已經自動建立。如果你參與 **Event Engine** 活動, 則講師會預先準備存儲桶。
 
-點擊 **Upload**.
+點擊 **Upload**。
 
 ![](./Images/s3_upload.png)
 
-在上傳頁面上，拖放剛才下載的`housing.csv`文件，然後單擊頁面底部的 **Upload**。上傳完成後，您可以單擊右上角**Close**按鈕。現在，您應該看到上傳到存儲桶中的文件。
+在上傳頁面上，拖放剛才下載的`housing.csv`文件，然後點擊頁面底部的 **Upload**。上傳完成後，您可以點擊右上角**Close**按鈕。現在，您應該看到上傳到存儲桶中的文件。
 
 ![](./Images/s3-uploaded-housing.png)
 
@@ -57,7 +57,7 @@ In this lab, 你想學習如何使用 Amazon SageMaker Canvas，匯入與分析�
 
 ## 將數據導入Canvas
 
-返回到Sagemaker Canvas。在左側選單上，您可以單擊第二個圖標，進入數據集部分，然後單擊 **Import**按鈕。
+返回到Sagemaker Canvas。在左側選單上，您可以點擊第二個圖標，進入數據集部分，然後點擊 **Import**按鈕。
 
 ![](./Images/import-data.png)
 
@@ -69,7 +69,7 @@ In this lab, 你想學習如何使用 Amazon SageMaker Canvas，匯入與分析�
 
 ![](./Images/canvas-select-preview.png)
 
-現在，您可以預覽要導入的數據集的100筆資料。完成資料檢查，確定是正確後，您可以單擊 **Import Data**.
+現在，您可預覽要導入的數據集的100筆資料。完成資料檢查，確定正確後，您可點擊 **Import Data**.
 
 ![](./Images/canvas-preview.png)
 
@@ -77,11 +77,11 @@ In this lab, 你想學習如何使用 Amazon SageMaker Canvas，匯入與分析�
 
 ## 建構和訓練ML模型
 
-現在，讓我們通過單擊左邊選單上的第二個按鈕回到 **Models**部分。
+現在，讓我們通過點擊左邊選單上的第二個按鈕回到 **Models**部分。
 
 ![](./Images/canvas-models.png)
 
-單擊 **+New Model**，並為您的模型輸入名稱。
+點擊 **+New Model**，並為您的模型輸入名稱，例如`Housing Regression`，然後點擊 **Create**。
 
 ![](./Images/new-housing-model.png)
 
@@ -89,7 +89,7 @@ In this lab, 你想學習如何使用 Amazon SageMaker Canvas，匯入與分析�
 
 ![](./Images/canvas-first-model-popup.png)
 
-在模型視圖中，您將看到四個選項卡，它們對應於創建模型並使用它來生成預測的四個步驟： **Select**, **Build**, **Analyze**, **Predict**. 在第一個選項卡中，**Select**，單擊按鈕選擇我們之前已經上傳的`housing.csv`數據集。 該數據集包括10欄位和20k筆數據。單擊底部的按鈕 **Select dataset**.
+在模型視圖中，您將看到四個選項卡，它們對應於創建模型並使用它來生成預測的四個步驟： **Select**, **Build**, **Analyze**, **Predict**. 在第一個選項卡中，**Select**，點擊按鈕選擇我們之前已經上傳的`housing.csv`數據集。 該數據集包括10欄位和20k筆數據。點擊底部的按鈕 **Select dataset**.
 
 ![](./Images/dataset-select.png)
 
@@ -119,12 +119,12 @@ Canvas 將自動移動到 **Build**階段。在此選項卡中，選擇目標欄
 
 ![](./Images/housing-quick-scoring.png)
 
-當我們移動到分析當中的 **Scoring**，我們可以看到一個預測值分佈的圖表：這將使我們能夠計算另一個指標，平均誤差(MAE)，這顯示我們的預測與實際值的平均差異。您可以通過單擊右側的 **Advanced metrics**按鈕，進一步檢視指標並獲得更多信息。
+當我們移動到分析當中的 **Scoring**，我們可以看到一個預測值分佈的圖表：這將使我們能夠計算另一個指標，平均誤差(MAE)，這顯示我們的預測與實際值的平均差異。您可以通過點擊右側的 **Advanced metrics**按鈕，進一步檢視指標並獲得更多信息。
 
 
 現在，您有兩個選擇：
 
-1.您可以通過單擊頁面底部的按鈕 **Predict**來使用此模型進行預測；
+1.您可以通過點擊頁面底部的按鈕 **Predict**來使用此模型進行預測；
 2.您也可以建構此模型的新版本，以使用 **Standard Build**流程進行訓練。這將需要更長的時間，大約4-6個小時，但模型可能會比較準確。
 
 今天這個實驗，我們將繼續使用選項1。
@@ -138,7 +138,7 @@ Canvas 將自動移動到 **Build**階段。在此選項卡中，選擇目標欄
 
 ![](./Images/housing-predict-setup.png)
 
-現在，選擇 **Select dataset**，然後選擇 `housing.csv`。接下來，在頁面底部選擇 **Generate predictions**。Canvas 將使用此數據集生成我們的預測。儘管通常情況， 我們不會將同一個數據集用於訓練和測試，但為了簡單起見，我們在這裡使用相同的數據集。幾秒鐘後，預測完成。您可以單擊長的很像"眼睛"的圖標做預覽，或單擊 download按鈕下載CSV文件。SageMaker Canvas將提供每筆數據的預測以及預測正確的概率。
+現在，選擇 **Select dataset**，然後選擇 `housing.csv`。接下來，在頁面底部選擇 **Generate predictions**。Canvas 將使用此數據集生成我們的預測。儘管通常情況， 我們不會將同一個數據集用於訓練和測試，但為了簡單起見，我們在這裡使用相同的數據集。幾秒鐘後，預測完成。您可以點擊長的很像"眼睛"的圖標做預覽，或點擊 download按鈕下載CSV文件。SageMaker Canvas將提供每筆數據的預測以及預測正確的概率。
 
 ![](./Images/housing-batch-predictions.png)
 
